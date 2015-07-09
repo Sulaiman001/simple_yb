@@ -5,3 +5,5 @@ Homestead.yaml
 .env.*.php
 .env.php
 .env
+*~
+.env.example
