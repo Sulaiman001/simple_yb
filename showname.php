@@ -1,3 +1,3 @@
 <?php
-  echo "Project name is Simple Year Book!";
+  echo "The Project name is Simple Work: Book!";
 ?>
