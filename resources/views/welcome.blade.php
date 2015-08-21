@@ -1,45 +1,50 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Laravel</title>
+@extends('app')
+@section('title') Home @stop
 
-        <link href="//fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
+@section('content')
+	<div class="row">
+	 <div class="col s6">
+		some content here
+	 </div>
+	 <form method="post" action="/auth/login" id="login-form">
+		{!! csrf_field() !!}
+		<div class="col s6">
+		 <div class="row">
+			<div class="card">
+			 <div class="row">
+				<div class="col s12 offset-s8">
+				 <span class="card-title green-text">Sign In</span>
+				</div>
+			 </div>
+			 <div class="row">
+				<div class="input-field col s10">
+				 <i class="material-icons prefix">email</i>
+				 <input type="text" name="email" placeholder="email" required="">
+				 <label for="email" class="active">Email</label>
+				</div>
+			 </div>
+			 <div class="row">
+				<div class="input-field col s10">
+				 <i class="material-icons prefix">account_circle</i>
+				 <input type="password" placeholder="password" name="password" required="">
+				 <label for="password" class="active">Password</label>
+				</div>
+				<div class="row">
+					<div class="input-field col s12 offset-s1">
+					 <input type="checkbox" id="remember_me" name="remember_me">
+					 <label for="remember_me">Remember Me</label>
+					</div>
+				</div>
+				<div class="row">
+				 <div class="input-field col s12 offset-s6">
+					<input type="submit" class="waves-effect waves-light btn of" value="Sign In">
+				 </div>
+				</div>
+			 </div>
+			</div>
+		 </div>
+		</div>
+	</div>
+	 </form>
 
-        <style>
-            html, body {
-                height: 100%;
-            }
-
-            body {
-                margin: 0;
-                padding: 0;
-                width: 100%;
-                display: table;
-                font-weight: 100;
-                font-family: 'Lato';
-            }
-
-            .container {
-                text-align: center;
-                display: table-cell;
-                vertical-align: middle;
-            }
-
-            .content {
-                text-align: center;
-                display: inline-block;
-            }
-
-            .title {
-                font-size: 96px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <div class="content">
-                <div class="title">Laravel 5</div>
-            </div>
-        </div>
-    </body>
-</html>
+@stop
