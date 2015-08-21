@@ -37,7 +37,7 @@
 				</div>
 				<div class="row">
 				 <div class="input-field col s12 offset-s6">
-					<input type="submit" class="waves-effect waves-light btn of" value="Sign In">
+					<input type="submit" class="waves-effect waves-light btn" value="Sign In">
 				 </div>
 				</div>
 			 </div>
