@@ -33,16 +33,19 @@
 		 <div class="row">
 			<div class="input-field col s10">
 			 <i class="material-icons prefix">account_circle</i>
-			 <input type="password" name="password" placeholder="password..." required="">
+			 <input type="password" name="password" placeholder="password..." required="" id="password">
 			 <label class="active" for="password">Password</label>
 			</div>
 		 </div>
 		 <div class="row">
 			<div class="input-field col s10">
 			 <i class="material-icons prefix">account_circle</i>
-			 <input type="password" name="password2" placeholder="confirm password..." required="">
+			 <input type="password" name="password2" placeholder="confirm password..." required="" id="password2">
 			 <label for="password2" class="active">Confirm Password</label>
 			</div>
+		 </div>
+		 <div id="dialog">
+				<span class="red-text">Your passwords do not match</span>
 		 </div>
 		 <div class="row">
 			<div class="input-field col s12 offset-s8">
@@ -53,4 +56,18 @@
 	 </form>
 	</div>
  </div>
+
+ <script type="text/javascript">
+	$('document').ready(function() {
+	 	$('#dialog').$dialog({autoOpen: false});
+	});
+	$('#password2').on('focusout', function() {
+			var password = $('#password').val();
+	 		var confirmPassword = $('#password2').val();
+
+	 		if(password !== confirmPassword ) {
+				$('#dialog').$dialog("open");
+			}
+	});
+ </script>
 @endsection

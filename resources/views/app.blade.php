@@ -6,6 +6,7 @@
  <!-- Compiled and minified JavaScript -->
  <script src="{!! asset('js/materialize.min.js') !!}"></script>
  <link href="//fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
+ <script src="{!! asset('js/jquery-1.11.3.min.js') !!}"></script>
  <title>@yield('title')</title>
 </head>
 <body>

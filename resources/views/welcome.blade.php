@@ -19,7 +19,7 @@
 			 <div class="row">
 				<div class="input-field col s10">
 				 <i class="material-icons prefix">email</i>
-				 <input type="text" name="email" placeholder="email" required="">
+				 <input type="email" name="email" placeholder="email" required="">
 				 <label for="email" class="active">Email</label>
 				</div>
 			 </div>
@@ -44,7 +44,6 @@
 			</div>
 		 </div>
 		</div>
-	</div>
-	 </form>
-
+	</form>
+</div>
 @stop
