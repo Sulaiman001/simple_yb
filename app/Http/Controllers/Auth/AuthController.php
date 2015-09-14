@@ -7,6 +7,8 @@ use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
@@ -31,8 +33,9 @@ class AuthController extends Controller
 
     protected $redirectPath = '/home';
     protected $loginPath = '/login';
+		protected $registerPath = '/register';
 
-    public function __construct()
+ 		public function __construct()
     {
         $this->middleware('guest', ['except' => 'getLogout']);
     }
@@ -55,8 +58,26 @@ class AuthController extends Controller
         return Validator::make($data, [
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|confirmed|min:6',
+				 		'username' => 'required|unique:users',
         ]);
     }
+
+ 		/*
+ 		 * handle user registration from a form post
+ 		 *
+ 		 */
+		 public function postRegister(Request $request) {
+			//construct the validator
+			$validator = $this->validator($request->all());
+			//redirect to /register if validation fails
+			if ( $validator->fails()) {
+			 return redirect($this->registerPath)->withErrors ( $validator );
+			}
+			//create and login a user.
+			Auth::login($this->create( $request->all () ) );
+			return redirect( $this->redirectPath () );
+
+		 }
 
     /**
      * Create a new user instance after a valid registration.
@@ -70,6 +91,10 @@ class AuthController extends Controller
             'role' => $data['role'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+				 		'username' =>$data['username'],
         ]);
     }
+
+
+
 }
