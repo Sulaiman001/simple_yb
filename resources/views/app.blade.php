@@ -15,7 +15,7 @@
 	<div class="navbar-wrapper">
 	 <a href="#" class="brand-logo">YearBook</a>
 	 <ul id="nav-mobile" class="right ">
-		<li><a href="/register">Sign Up</a> </li>
+		<li><a href="{{ url('/register') }}">Sign Up</a> </li>
 	 </ul>
 	</div>
  </div>

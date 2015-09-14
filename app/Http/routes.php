@@ -17,13 +17,16 @@ Route::get('/', function () {
 
 // Authentication routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');
+
 Route::post('auth/login', 'Auth\AuthController@postLogin');
-Route::get('auth/logout', 'Auth\AuthController@getLogout');
+
+Route::get('logout', 'Auth\AuthController@getLogout');
 
 // Registration routes...
 Route::get('register', 'Auth\AuthController@getRegister');
+
 Route::post('register', 'Auth\AuthController@postRegister');
 
-route::get('/home', function() {
- return 'welcome';
+route::get('/home', function () {
+ return 'home';
 });

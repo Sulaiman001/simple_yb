@@ -27,7 +27,6 @@ class RegisterUserCest
 		 $I->fillField('password_confirmation', 'password');
 		 $I->fillField('role', 'user');
 		 $I->click('#submit');
-		 $I->seeInDatabase('users', ['username' =>'Danverem']);
 		 $I->seeInCurrentUrl('/home');
 		}
 }

@@ -33,7 +33,7 @@ class AuthController extends Controller
 
     protected $redirectPath = '/home';
     protected $loginPath = '/login';
-		protected $registerPath = '/register';
+	protected $registerPath = '/register';
 
  		public function __construct()
     {
@@ -94,7 +94,6 @@ class AuthController extends Controller
 				 		'username' =>$data['username'],
         ]);
     }
-
 
 
 }
